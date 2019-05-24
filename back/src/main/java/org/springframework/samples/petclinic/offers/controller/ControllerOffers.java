@@ -34,7 +34,7 @@ public class ControllerOffers {
 			return (List<OfferEntity>) ServicioOfertas.findAllOffer();
 		}
 		
-		@GetMapping(path="/getValid", produces = MediaType.APPLICATION_JSON_VALUE)
+		@GetMapping(path="/valid", produces = MediaType.APPLICATION_JSON_VALUE)
 		public List<OfferEntity> getValid() {			
 			return (List<OfferEntity>) serv2.findActual();
 		}
