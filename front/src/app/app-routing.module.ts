@@ -29,7 +29,8 @@ import { OfferHomeComponent } from './offers/offers-home/offer-home.component';
 const appRoutes: Routes = [
   {path: 'welcome', component: WelcomeComponent},
   {path: '', component: WelcomeComponent},
-  {path: '**', component: PageNotFoundComponent}
+  {path: '**', component: PageNotFoundComponent},
+  {path: 'offers', component: OfferHomeComponent}
 
 ];
 
