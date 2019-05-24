@@ -39,14 +39,6 @@
       <div class="form-group" hidden="true">
         <input type="text" hidden="true" class="form-control" id="id" [(ngModel)]="offer.id" name="id"/>
       </div>
-      <div class="form-group has-feedback" [class.has-success]="title.dirty && title.valid" [class.has-error]="title.dirty &&  !title.valid">
-        <label for="title" class="col-sm-2 control-label">ID</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="title" [(ngModel)]="offer.title" minlength="2" required name="title" #title="ngModel"/>
-          <span class="glyphicon form-control-feedback" [class.glyphicon-ok]="title.valid" [class.glyphicon-remove]="!title.valid" aria-hidden="true"></span>
-          <span class="help-block" *ngIf="title.dirty && title.hasError('required')">ID is required</span>
-        </div>
-      </div>
       <div class="form-group has-feedback" [class.has-success]="description.dirty && description.valid" [class.has-error]="description.dirty && !description.valid">
         <label for="description" class="col-sm-2 control-label">Description</label>
         <div class="col-sm-10">
