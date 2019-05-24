@@ -1,3 +1,30 @@
-<p>
-  offers-list works!
-</p>
+<div class="container-fluid">
+  <div class="container xd-container">
+    <h2>Offers</h2>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Discount</th>
+          <th>Expire Date</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr *ngFor="let offer of offers">
+          <td class="offerFullName"><a routerLink="/offers/{{offers.id}}" routerLinkActive="active"
+                                       (click)="onSelect(offer)">{{offer.firstName}} {{offer.lastName}}</a></td>
+          <td>{{offer.address}}</td>
+          <td>{{offer.city}}</td>
+          <td>{{offer.telephone}}</td>
+        </tr>
+        </tbody>
+      </table>
+      <div>
+        <button class="btn btn-default" (click)="addOffer()">Add Offer</button>
+      </div>
+    </div>
+  </div>
+</div>
