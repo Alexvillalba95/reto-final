@@ -10,6 +10,6 @@ public interface IService {
 	OfferEntity findOfferById(int id) throws DataAccessException;
 	Collection<OfferEntity> findAllOffer() throws DataAccessException;
 	void createOffer(OfferEntity offer);
-	void deleteOffer(OfferEntity offer);
+	void deleteOffer(Integer id);
 	void updateOffer(OfferEntity offer);
 }
