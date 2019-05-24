@@ -22,6 +22,27 @@ public class ServiceImpl implements IService {
     	this.repositoryOffers = repositoryOffers;
     	}
     
+    public void deleteOffer(OfferEntity offer) {
+    	Integer id = offer.getId();
+    	
+    	repositoryOffers.delete(id);
+    }
+    
+    public void createOffer(OfferEntity offer) {
+    	
+    	repositoryOffers.save(offer);
+    }
+    
+    public void updateOffer(OfferEntity offer) {
+    	repositoryOffers.save(findOneById(offer.getId()));
+    }
+    
+    public OfferEntity findOneById(Integer id) {
+    	
+    	return repositoryOffers.findOne(id);
+    	
+    }
+    
     @Override
 	@Transactional(readOnly = true)
 	public Collection<OfferEntity> findAllOffer() throws DataAccessException {
