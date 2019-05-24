@@ -7,9 +7,9 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.orm.ObjectRetrievalFailureException;
 import org.springframework.samples.petclinic.model.OfferEntity;
+import org.springframework.samples.petclinic.model.Pet;
 import org.springframework.samples.petclinic.offers.repository.RepositoryOffer;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class ServiceImpl implements IService {
@@ -43,11 +43,9 @@ public class ServiceImpl implements IService {
     	
     }
     
-    @Override
-	@Transactional(readOnly = true)
-	public Collection<OfferEntity> findAllOffer() throws DataAccessException {
-		return repositoryOffers.findAll();
-	}
+    public Collection<OfferEntity> findAllOffer() {
+    	return repositoryOffers.findAll();
+    }
 
 	@Override
 	public OfferEntity findOfferById(int id) throws DataAccessException {

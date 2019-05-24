@@ -19,7 +19,7 @@ public interface RepositoryOffer extends JpaRepository<OfferEntity, Serializable
 	
 	void delete(Integer id) throws DataAccessException;*/
 	
-	List<OfferEntity> findByExpireDate(Date now);
+	List<OfferEntity> findByExpiredate(Date now);
 	
 	
 	

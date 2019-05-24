@@ -73,6 +73,7 @@ CREATE  TABLE users (
   PRIMARY KEY (username)
 );
 
+
 CREATE TABLE roles (
   id              INTEGER IDENTITY PRIMARY KEY,
   username        VARCHAR(20) NOT NULL,
