@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class OffersListComponent implements OnInit {
   errorMessage: string;
   offers: Offer[];
+  deleteRes;
 
   constructor(private router: Router, private offerservice: OffersService) { }
 
@@ -26,6 +27,13 @@ export class OffersListComponent implements OnInit {
   addOffer(){
     this.router.navigate(['/offers/add']);
   }
-  
+
+  deleteOffer(id){
+
+    this.offerservice.deleteOffer(id).subscribe(data => {
+      this.deleteRes = data;})
+
+  }
+
 
 }

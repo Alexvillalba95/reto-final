@@ -17,7 +17,7 @@
           <td class="offerFullName">{{offer.title}}</td>
           <td>{{offer.description}}</td>
           <td>{{offer.discount}}</td>
-          <td>{{offer.expireDate}}</td>
+          <td>{{offer.expireDate}}  <button (click)="deleteOffer(offer.id)">Borrar</button></td>
         </tr>
         </tbody>
       </table>
