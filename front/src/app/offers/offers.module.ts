@@ -15,8 +15,19 @@ import { OffersService } from './offers.service';
     OffersRoutingModule,
   ],
 
-  declarations: [FormOfferComponent, OffersListComponent, OfferHomeComponent],
-  providers: [OffersService]
+  declarations: [
+    FormOfferComponent,
+    OffersListComponent,
+    OfferHomeComponent
+  ],
+  providers: [
+    OffersService
+  ],
+  exports: [
+    OfferHomeComponent,
+    OffersListComponent,
+    FormOfferComponent
+  ]
 
 })
 export class OffersModule { }

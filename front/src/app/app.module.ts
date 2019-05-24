@@ -35,6 +35,10 @@ import {PartsModule} from './parts/parts.module';
 import {SpecialtiesModule} from './specialties/specialties.module';
 import {HttpErrorHandler} from './error.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { OfferHomeComponent } from './offers/offers-home/offer-home.component';
+import { OffersListComponent } from './offers/offers-list/offers-list.component';
+import { FormOfferComponent } from './offers/form-offer/form-offer.component';
+import { OffersModule } from './offers/offers.module';
 
 
 @NgModule({
@@ -53,6 +57,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     SpecialtiesModule,
     PartsModule,
     BrowserAnimationsModule,
+    OffersModule,
     AppRoutingModule
   ],
   providers: [
