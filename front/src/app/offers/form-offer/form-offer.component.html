@@ -1,29 +1,25 @@
-<form class="form-horizontal" #ownerForm="ngForm" (ngSubmit)="onSubmit(ownerForm.value)">
+<form class="form-horizontal" #offerForm="ngForm" (ngSubmit)="onSubmit(offerForm.value)">
   <div class="form-group">
-    <label for="firstname">First Name</label>
-    <input type="text" class="form-control" required [(ngModel)]="owner.firstName" name="firstName" #name="ngModel">
-    <div [hidden]="name.valid || name.pristine" class="alert alert-danger">Name is required</div>
+    <label for="title">Title</label>
+    <input type="text" class="form-control" required [(ngModel)]="offer.title" name="title" #title="ngModel">
+    <div [hidden]="title.valid || title.pristine" class="alert alert-danger">Name is required</div>
   </div>
   <div class="form-group">
-    <label for="lastname">Last Name</label>
-    <input type="text" class="form-control" required [(ngModel)]="owner.lastName" name="lastName" #lastname>
+    <label for="description">Description</label>
+    <input type="text" class="form-control" required [(ngModel)]="offer.description" name="description" #description>
   </div>
   <div class="form-group">
-    <label for="address">Address</label>
-    <input type="text" class="form-control" required [(ngModel)]="owner.address" name="address" #address>
+    <label for="discount">Discount</label>
+    <input type="text" class="form-control" required [(ngModel)]="offer.discount" name="discount" #discount>
   </div>
   <div class="form-group">
-    <label for="city">City</label>
-    <input type="text" class="form-control" required [(ngModel)]="owner.city" name="city" #city>
-  </div>
-  <div class="form-group">
-    <label for="telephone">Telephone</label>
-    <input type="number" class="form-control" required [(ngModel)]="owner.telephone" name="telephone" #telephone>
+    <label for="expireDate">Expire Date</label>
+    <input type="text" class="form-control" required [(ngModel)]="offer.expireDate" name="expireDate" #expireDate>
   </div>
 
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <button class="btn btn-default" type="submit" [disabled]="!ownerForm.valid">Add Owner</button>
+      <button class="btn btn-default" type="submit" [disabled]="!offerForm.valid">Add Offer</button>
     </div>
   </div>
 </form>
