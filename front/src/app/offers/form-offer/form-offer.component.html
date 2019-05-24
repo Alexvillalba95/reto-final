@@ -1,3 +1,5 @@
+<!--
+  
 <form class="form-horizontal" #offerForm="ngForm" (ngSubmit)="onSubmit(offerForm.value)">
   <div class="form-group">
     <label for="title">Title</label>
@@ -23,3 +25,58 @@
     </div>
   </div>
 </form>
+
+
+-->
+
+
+<div class="container-fluid">
+  <div class="container xd-container">
+    <h2>
+      New Offer
+    </h2>
+    <form (ngSubmit)="onSubmit(offerForm.value)" #offerForm="ngForm" class="form-horizontal">
+      <div class="form-group" hidden="true">
+        <input type="text" hidden="true" class="form-control" id="id" [(ngModel)]="offer.id" name="id"/>
+      </div>
+      <div class="form-group has-feedback" [class.has-success]="title.dirty && title.valid" [class.has-error]="title.dirty &&  !title.valid">
+        <label for="title" class="col-sm-2 control-label">ID</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="title" [(ngModel)]="offer.title" minlength="2" required name="title" #title="ngModel"/>
+          <span class="glyphicon form-control-feedback" [class.glyphicon-ok]="title.valid" [class.glyphicon-remove]="!title.valid" aria-hidden="true"></span>
+          <span class="help-block" *ngIf="title.dirty && title.hasError('required')">ID is required</span>
+        </div>
+      </div>
+      <div class="form-group has-feedback" [class.has-success]="description.dirty && description.valid" [class.has-error]="description.dirty && !description.valid">
+        <label for="description" class="col-sm-2 control-label">Description</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="description" [(ngModel)]="offer.description" name="description" minlength="2" required #description="ngModel"/>
+          <span class="glyphicon form-control-feedback" [class.glyphicon-ok]="description.valid" [class.glyphicon-remove]="!description.valid" aria-hidden="true"></span>
+          <span class="help-block" *ngIf="description.dirty && description.hasError('required')">Description</span>
+        </div>
+      </div>
+      <div class="form-group has-feedback" [class.has-success]="discount.dirty && discount.valid" [class.has-error]="discount.dirty && !discount.valid">
+        <label for="discount" class="col-sm-2 control-label">Discount</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="discount" [(ngModel)]="offer.discount" name="discount" required #discount="ngModel"/>
+          <span class="glyphicon form-control-feedback" [class.glyphicon-ok]="discount.valid" [class.glyphicon-remove]="!discount.valid" aria-hidden="true"></span>
+          <span class="help-block" *ngIf="discount.dirty && discount.hasError('required')">Discount is required</span>
+        </div>
+      </div>
+      <div class="form-group has-feedback" [class.has-success]="city.dirty && city.valid" [class.has-error]="city.dirty && !city.valid">
+        <label for="expireDate" class="col-sm-2 control-label">Expire Date</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="city" [(ngModel)]="offer.city" name="city" required #city="ngModel"/>
+          <span class="glyphicon form-control-feedback" [class.glyphicon-ok]="city.valid" [class.glyphicon-remove]="!city.valid" aria-hidden="true"></span>
+          <span class="help-block" *ngIf="city.dirty && city.hasError('required')">ExpireDate is required</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button class="btn btn-default" type="button" (click)="gotooffersList()">Back</button>
+          <button class="btn btn-default" type="submit" [disabled]="!offerForm.valid">Add offer</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
