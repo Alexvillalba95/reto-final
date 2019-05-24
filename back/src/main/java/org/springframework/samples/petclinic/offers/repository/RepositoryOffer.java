@@ -1,6 +1,7 @@
 package org.springframework.samples.petclinic.offers.repository;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -15,6 +16,6 @@ public interface RepositoryOffer extends JpaRepository<OfferEntity, Serializable
 	
 	void delete(Integer id) throws DataAccessException;*/
 	
-	List<OfferEntity> getValids();
+	List<OfferEntity> findByExpireDate(Date now);
 	
 }
