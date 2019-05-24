@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.samples.petclinic.model.OfferEntity;
 import org.springframework.samples.petclinic.offers.service.IService;
+import org.springframework.samples.petclinic.offers.service.ServiceImpl;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,11 +25,18 @@ public class ControllerOffers {
 
 		@Autowired
 		private IService ServicioOfertas;
+		@Autowired
+		private ServiceImpl serv2;
 		private List <OfferEntity> prueba = new ArrayList<OfferEntity>();
 	
 		@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
 		public List<OfferEntity> getOffers() {			
 			return (List<OfferEntity>) ServicioOfertas.findAllOffer();
+		}
+		
+		@GetMapping(path="/getValid", produces = MediaType.APPLICATION_JSON_VALUE)
+		public List<OfferEntity> getValid() {			
+			return (List<OfferEntity>) serv2.findActual();
 		}
 		
 		@RequestMapping(path = "/{offerId}", method = RequestMethod.POST)
