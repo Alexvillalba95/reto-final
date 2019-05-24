@@ -31,7 +31,7 @@ public class ServiceImpl implements IService {
 	public OfferEntity findOfferById(int id) throws DataAccessException {
 		OfferEntity offer = null;
 		try {
-			offer = repositoryOffers.findById(id);
+			offer = repositoryOffers.findOne(id);
 		} catch (ObjectRetrievalFailureException|EmptyResultDataAccessException e) {
 		// just ignore not found exceptions for Jdbc/Jpa realization
 			return null;
