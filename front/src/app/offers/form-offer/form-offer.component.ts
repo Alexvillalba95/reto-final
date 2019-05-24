@@ -11,9 +11,12 @@ export class FormOfferComponent implements OnInit {
 
   private offer: Offer;
 
-  constructor(private service: OffersService) { }
+  constructor(private service: OffersService) { 
+    
+  }
 
   ngOnInit() {
+    this.offer = new Offer();
   }
 
   onSubmit(offer: Offer) {

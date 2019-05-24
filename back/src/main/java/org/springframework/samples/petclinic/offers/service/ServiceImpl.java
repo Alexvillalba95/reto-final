@@ -23,8 +23,8 @@ public class ServiceImpl implements IService {
     	this.repositoryOffers = repositoryOffers;
     	}
     
-    public void deleteOffer(OfferEntity offer) {
-    	Integer id = offer.getId();
+    public void deleteOffer(Integer id) {
+    	
     	
     	repositoryOffers.delete(id);
     }
