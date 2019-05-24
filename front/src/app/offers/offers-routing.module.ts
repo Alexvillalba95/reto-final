@@ -6,9 +6,8 @@ import { FormOfferComponent } from './form-offer/form-offer.component';
 import { OfferHomeComponent } from './offers-home/offer-home.component';
 
 const offerRoutes: Routes = [
-  { path: 'offers', component: OfferHomeComponent },
-  { path: 'offers/add', component: FormOfferComponent },
-  { path: 'offers/list', component: OffersListComponent }
+  { path: 'offers', component: OffersListComponent },
+  { path: 'offers/add', component: FormOfferComponent }
 
 ];
 
