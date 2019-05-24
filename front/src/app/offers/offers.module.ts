@@ -22,11 +22,6 @@ import { OffersService } from './offers.service';
   ],
   providers: [
     OffersService
-  ],
-  exports: [
-    OfferHomeComponent,
-    OffersListComponent,
-    FormOfferComponent
   ]
 
 })
