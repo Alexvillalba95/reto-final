@@ -12,11 +12,12 @@
           <th>Expire Date</th>
         </tr>
         </thead>
-        <tbody>
-        <td>
-        <tr>
-        </tr>
-        </td>
+        <tbody *ngFor="let Ofertas of Offers; let i=index;">
+        <td>{{Ofertas.id}}</td>
+        <td>{{Ofertas.title}}</td>
+        <td>{{Ofertas.description}}</td>
+        <td>{{Ofertas.discount}}</td>
+        <td>{{Ofertas.expireDate}}</td>
         </tbody>
       </table>
     </div>
