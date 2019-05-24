@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Offer } from '../offer';
 import { OffersService } from '../offers.service';
 
 @Component({
@@ -8,11 +9,13 @@ import { OffersService } from '../offers.service';
 })
 export class OfferHomeComponent implements OnInit {
 
-  constructor(private offerlist: OffersService) {
-
+  private Ofertas : Array<Offer>;
+  constructor(private service : OffersService) {
+      this.Ofertas = [];
   }
 
   ngOnInit() {
+    this.service.getOffersValid().subscribe(resp => {this.Ofertas = resp;});
   }
 
 }

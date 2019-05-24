@@ -13,9 +13,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class ServiceImpl implements IService {
-    private RepositoryOffer repositoryOffers;
+	@Autowired
+	private RepositoryOffer repositoryOffers;
 
-    @Autowired
+    
     public ServiceImpl (
     	RepositoryOffer repositoryOffers) {
     	this.repositoryOffers = repositoryOffers;
