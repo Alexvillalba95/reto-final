@@ -5,7 +5,10 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.samples.petclinic.model.OfferEntity;
+import org.springframework.stereotype.Repository;
 //import org.springframework.samples.petclinic.model.Owner;
+
+@Repository
 
 public interface RepositoryOffer extends JpaRepository<OfferEntity, Serializable>{
 
@@ -16,5 +19,7 @@ public interface RepositoryOffer extends JpaRepository<OfferEntity, Serializable
 	void delete(Integer id) throws DataAccessException;*/
 	
 	List<OfferEntity> getValids();
+	
+	
 	
 }
