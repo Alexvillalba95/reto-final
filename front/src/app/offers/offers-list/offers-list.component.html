@@ -14,11 +14,10 @@
 
         <tbody>
         <tr *ngFor="let offer of offers">
-          <td class="offerFullName"><a routerLink="/offers/{{offers.id}}" routerLinkActive="active"
-                                       (click)="onSelect(offer)">{{offer.firstName}} {{offer.lastName}}</a></td>
-          <td>{{offer.address}}</td>
-          <td>{{offer.city}}</td>
-          <td>{{offer.telephone}}</td>
+          <td class="offerFullName">{{offer.title}}</td>
+          <td>{{offer.description}}</td>
+          <td>{{offer.discount}}</td>
+          <td>{{offer.expireDate}}</td>
         </tr>
         </tbody>
       </table>
