@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Offer } from '../offer';
+import { OffersService } from '../offers.service';
 
 @Component({
   selector: 'app-form-offer',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormOfferComponent implements OnInit {
 
-  constructor() { }
+  private offer: Offer;
+
+  constructor(private service: OffersService) { }
 
   ngOnInit() {
+  }
+
+  onSubmit(offer: Offer) {
+    offer.id = null;
+    this.service.addOffer(offer).subscribe(
+      new_offer => {
+        this.offer = new_offer;
+      },
+    );
   }
 
 }
