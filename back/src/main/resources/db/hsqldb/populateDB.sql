@@ -57,3 +57,6 @@ INSERT INTO users(username,password,enabled) VALUES ('admin','admin', true);
 INSERT INTO roles (username, role) VALUES ('admin', 'ROLE_OWNER_ADMIN');
 INSERT INTO roles (username, role) VALUES ('admin', 'ROLE_VET_ADMIN');
 INSERT INTO roles (username, role) VALUES ('admin', 'ROLE_ADMIN');
+
+INSERT INTO offer('Castración','Castración a mitad de precio primera quincena de junio',0.5,'16/06/2019') VALUES ('title','description','discount','expiredate');
+INSERT INTO offer('Desparasitación','Castración a mitad de precio segunda quincena de junio',0.5,'1/07/2019') VALUES ('title','description','discount','expiredate');
