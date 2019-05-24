@@ -57,8 +57,8 @@ import { OffersModule } from './offers/offers.module';
     SpecialtiesModule,
     PartsModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
-    OffersModule
+    OffersModule,
+    AppRoutingModule
   ],
   providers: [
     HttpErrorHandler,
