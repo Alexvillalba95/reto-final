@@ -26,5 +26,6 @@ export class OffersListComponent implements OnInit {
   addOffer(){
     this.router.navigate(['/offers/add']);
   }
+  
 
 }
