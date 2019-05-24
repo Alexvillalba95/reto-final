@@ -10,11 +10,11 @@
   </div>
   <div class="form-group">
     <label for="discount">Discount</label>
-    <input type="text" class="form-control" required [(ngModel)]="offer.discount" name="discount" #discount>
+    <input type="number" class="form-control" required [(ngModel)]="offer.discount" name="discount" #discount>
   </div>
   <div class="form-group">
     <label for="expireDate">Expire Date</label>
-    <input type="text" class="form-control" required [(ngModel)]="offer.expireDate" name="expireDate" #expireDate>
+    <input type="date" class="form-control" required [(ngModel)]="offer.expireDate" name="expireDate" #expireDate>
   </div>
 
   <div class="form-group">
