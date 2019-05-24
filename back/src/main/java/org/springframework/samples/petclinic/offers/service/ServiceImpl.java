@@ -1,13 +1,14 @@
 package org.springframework.samples.petclinic.offers.service;
 
 import java.util.Collection;
+import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.orm.ObjectRetrievalFailureException;
 import org.springframework.samples.petclinic.model.OfferEntity;
-import org.springframework.samples.petclinic.model.Pet;
 import org.springframework.samples.petclinic.offers.repository.RepositoryOffer;
 import org.springframework.stereotype.Service;
 
@@ -47,6 +48,10 @@ public class ServiceImpl implements IService {
     	return repositoryOffers.findAll();
     }
 
+    public List<OfferEntity> findActual() {
+    	Date date = new Date();
+    	return repositoryOffers.findByExpiredate(date);
+    }
 	@Override
 	public OfferEntity findOfferById(int id) throws DataAccessException {
 		OfferEntity offer = null;
