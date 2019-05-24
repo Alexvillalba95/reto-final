@@ -15,23 +15,21 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/Offers")
+@RequestMapping("/offers")
 public class ControllerOffers {
 
 		@Autowired
-		private IService ServicioOfertas;
+		private IService servicioOfertas;
 		@Autowired
 		private ServiceImpl serv2;
-		private List <OfferEntity> prueba = new ArrayList<OfferEntity>();
 	
 		@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
 		public List<OfferEntity> getOffers() {			
-			return (List<OfferEntity>) ServicioOfertas.findAllOffer();
+			return (List<OfferEntity>) servicioOfertas.findAllOffer();
 		}
 		
 		@GetMapping(path="/valid", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -41,18 +39,18 @@ public class ControllerOffers {
 		
 		@RequestMapping(path = "/{offerId}", method = RequestMethod.POST)
 		public void addOffer(@PathVariable ("offerId") Integer id, @RequestBody OfferEntity offer) {			
-			ServicioOfertas.createOffer(offer);
+			servicioOfertas.createOffer(offer);
 		}
 		
 		@RequestMapping(path = "/{offerId}", method = RequestMethod.DELETE)
 		public void deleteOffers(@PathVariable ("offerId") Integer id) {
 
-			ServicioOfertas.deleteOffer(id);
+			servicioOfertas.deleteOffer(id);
 		}
 		
 		@RequestMapping(path = "/{offerId}", method = RequestMethod.PUT)
 		public void modifyOffers(@PathVariable ("billId") Integer id, @RequestBody OfferEntity offer) {
-			ServicioOfertas.updateOffer(offer);
+			servicioOfertas.updateOffer(offer);
 		}
 	
 }
